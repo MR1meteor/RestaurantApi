@@ -6,4 +6,33 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="Scripts\Dish\PostgresDish.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>PostgresDish.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Scripts\Order\PostgresOrder.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>PostgresOrder.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Scripts\Dish\PostgresDish.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>PostgresDish.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Scripts\Order\PostgresOrder.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>PostgresOrder.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Core\Restaurant\Restaurant.Application.Abstractions\Restaurant.Application.Abstractions.csproj" />
+      <ProjectReference Include="..\..\Restaurant.Infrastructure.Common\Restaurant.Infrastructure.Common.csproj" />
+    </ItemGroup>
+
 </Project>

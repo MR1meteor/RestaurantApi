@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FluentMigrator" Version="5.2.0" />
+      <PackageReference Include="FluentMigrator.Runner.Postgres" Version="5.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0-rc.1.24431.7" />
+    </ItemGroup>
+
 </Project>
