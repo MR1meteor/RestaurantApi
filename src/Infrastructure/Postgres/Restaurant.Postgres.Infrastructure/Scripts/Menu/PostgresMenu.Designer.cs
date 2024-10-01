@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
+namespace Restaurant.Postgres.Infrastructure.Scripts.Menu {
     using System;
     
     
@@ -21,14 +21,14 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class PostgresOrder {
+    internal class PostgresMenu {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal PostgresOrder() {
+        internal PostgresMenu() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Restaurant.Postgres.Infrastructure.Scripts.Order.PostgresOrder", typeof(PostgresOrder).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Restaurant.Postgres.Infrastructure.Scripts.Menu.PostgresMenu", typeof(PostgresMenu).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,7 +60,7 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM orders
+        ///   Looks up a localized string similar to DELETE FROM menus
         ///WHERE id = @Id.
         /// </summary>
         internal static string Delete {
@@ -71,12 +71,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         
         /// <summary>
         ///   Looks up a localized string similar to SELECT
-        ///    id              as &quot;Id&quot;,
-        ///    table_number    as &quot;TableNumber&quot;,
-        ///    total_price     as &quot;TotalPrice&quot;,
-        ///    status          as &quot;Status&quot;,
-        ///    created_time    as &quot;CreatedTime&quot;
-        ///FROM orders.
+        ///    id          as &quot;Id&quot;,
+        ///    title       as &quot;Title&quot;,
+        ///    description as &quot;Description&quot;
+        ///FROM menus.
         /// </summary>
         internal static string GetAll {
             get {
@@ -86,12 +84,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         
         /// <summary>
         ///   Looks up a localized string similar to SELECT
-        ///    id              as &quot;Id&quot;,
-        ///    table_number    as &quot;TableNumber&quot;,
-        ///    total_price     as &quot;TotalPrice&quot;,
-        ///    status          as &quot;Status&quot;,
-        ///    created_time    as &quot;CreatedTime&quot;
-        ///FROM orders
+        ///    id          as &quot;Id&quot;,
+        ///    title       as &quot;Title&quot;,
+        ///    description as &quot;Description&quot;
+        ///FROM menus
         ///WHERE id = @Id.
         /// </summary>
         internal static string GetById {
@@ -101,8 +97,8 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INSERT INTO orders (table_number, total_price, status, created_time)
-        ///VALUES (@TableNumber, @TotalPrice, @Status, @CreatedTime).
+        ///   Looks up a localized string similar to INSERT INTO menus (title, description)
+        ///VALUES (@Title, @Description).
         /// </summary>
         internal static string Insert {
             get {
@@ -111,12 +107,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UPDATE orders
+        ///   Looks up a localized string similar to UPDATE menus
         ///SET
-        ///    table_number    = @TableNumber,
-        ///    total_price     = @TotalPrice,
-        ///    status          = @Status,
-        ///    created_time    = @CreatedTime
+        ///    title       = @Title,
+        ///    Description = @Description
         ///WHERE id = @Id.
         /// </summary>
         internal static string Update {

@@ -27,18 +27,22 @@ public static class OrderMapper
             : db.Select(MapToDomain).ToList();
     }
 
-    public static OrderFull MapToFullDomain(this DbOrder? db, IEnumerable<DbDish> dbDishes)
+    public static DbOrder MapToDb(this Order domain)
     {
-        return db == null
-            ? new OrderFull()
-            : new OrderFull
+        return domain == null
+            ? new DbOrder()
+            : new DbOrder
             {
-                Id = db.Id,
-                TableNumber = db.TableNumber,
-                TotalPrice = db.TotalPrice,
-                Status = (OrderStatus)db.Status,
-                CreatedTime = db.CreatedTime,
-                Dishes = dbDishes.MapToDomain()
+                Id = domain.Id,
+                TableNumber = domain.TableNumber,
+                TotalPrice = domain.TotalPrice,
+                Status = (short)domain.Status,
+                CreatedTime = domain.CreatedTime
             };
+    }
+
+    public static List<DbOrder> MapToDb(this IEnumerable<Order> domainEnumerable)
+    {
+        return domainEnumerable == null ? new List<DbOrder>() : domainEnumerable.Select(MapToDb).ToList();
     }
 }
