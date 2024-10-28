@@ -12,4 +12,8 @@
         <ProjectReference Include="..\Restaurant.Application.Domain\Restaurant.Application.Domain.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0-rc.2.24473.5" />
+    </ItemGroup>
+
 </Project>

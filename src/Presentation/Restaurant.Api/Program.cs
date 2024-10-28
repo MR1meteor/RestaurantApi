@@ -14,6 +14,12 @@ builder.Services.AddSingleton<IDapperSettings, PostgresDapperSettings>();
 builder.Services.AddSingleton<IDapperContext, DapperContext>();
 BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
 builder.Services.RegisterAllTypes<IDependency>(typeof(Program).Assembly);
+builder.Services.AddStackExchangeRedisCache(opts =>
+{
+    opts.Configuration = builder.Configuration["Connections:Redis"];
+    opts.InstanceName = builder.Configuration["RedisCacheInstance"];
+});
+builder.Services.AddLogging(b => b.AddConsole());
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddPostgresMigrationRunner();

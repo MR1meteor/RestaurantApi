@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using Restaurant.Application.Abstractions;
 using Restaurant.Application.Abstractions.Mongo;
 using Restaurant.Application.Domain.Domain;
@@ -9,24 +10,52 @@ namespace Restaurant.Application;
 public class DishService : IDishService
 {
     private readonly IDishRepository _dishRepository;
+    private readonly IDishCacheService _dishCacheService;
+    private readonly ILogger<DishService> _logger;
 
-    public DishService(IDishRepository dishRepository)
+    public DishService(IDishRepository dishRepository, IDishCacheService dishCacheService, ILogger<DishService> logger)
     {
         _dishRepository = dishRepository;
+        _dishCacheService = dishCacheService;
+        _logger = logger;
     }
 
     public async Task<Result<List<Dish>>> GetAllAsync()
     {
+        var cachedData = await _dishCacheService.GetAllAsync();
+
+        if (cachedData.Count != 0)
+        {
+            _logger.LogInformation("Get all from cache");
+            return Result<List<Dish>>.Success(cachedData);
+        }
+        
+        _logger.LogInformation("Get all from db");
         var dishes = await _dishRepository.GetAllAsync();
+        await _dishCacheService.AddAllAsync(dishes.MapToDomain());
         return Result<List<Dish>>.Success(dishes.MapToDomain());
     }
 
     public async Task<Result<Dish>> GetByIdAsync(string id)
     {
-        var dish = await _dishRepository.GetByIdAsync(id);
-        return dish == null
-            ? Result<Dish>.Failure(Errors.General.ObjectNotFound("Dish"))
-            : Result<Dish>.Success(dish.MapToDomain());
+        var cachedData = await _dishCacheService.GetByIdAsync(id);
+
+        if (cachedData != null)
+        {
+            _logger.LogInformation($"Get by id {id} from cache");
+            return Result<Dish>.Success(cachedData);
+        }
+        
+        _logger.LogInformation($"Get by id {id} from db");
+        var dbDish = await _dishRepository.GetByIdAsync(id);
+        if (dbDish == null)
+        {
+            return Result<Dish>.Failure(Errors.General.ObjectNotFound("Dish"));
+        }
+
+        var dish = dbDish.MapToDomain();
+        await _dishCacheService.AddAsync(dish);
+        return Result<Dish>.Success(dish);
     }
 
     public async Task<Result> CreateAsync(Dish dish)
@@ -44,6 +73,7 @@ public class DishService : IDishService
         }
         
         await _dishRepository.UpdateAsync(dish.MapToMongoDb());
+        await _dishCacheService.AddAsync(dish);
         return Result.Success();
     }
 

@@ -39,6 +39,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mongo", "Mongo", "{C010521E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Mongo.Infrastructure", "src\Infrastructure\Mongo\Restaurant.Mongo.Infrastructure\Restaurant.Mongo.Infrastructure.csproj", "{DDA356FD-E6C7-4677-B839-2B9671FF1043}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{B4CA879C-52F7-41AC-A886-5AB27D0B6E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Redis.Infrastructure", "src\Infrastructure\Redis\Restaurant.Redis.Infrastructure\Restaurant.Redis.Infrastructure.csproj", "{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -127,6 +131,14 @@ Global
 		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x64.Build.0 = Release|Any CPU
 		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x86.ActiveCfg = Release|Any CPU
 		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x86.Build.0 = Release|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Debug|x64.Build.0 = Debug|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Debug|x86.Build.0 = Debug|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Release|x64.ActiveCfg = Release|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Release|x64.Build.0 = Release|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Release|x86.ActiveCfg = Release|Any CPU
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,5 +164,7 @@ Global
 		{B2FF54FE-5ED0-4ED2-AA4C-746DE989A823} = {CA83CC5D-9922-4B09-B630-52266918B04C}
 		{C010521E-BDDD-46F7-8689-DE8E111B57A2} = {B810C47D-30A9-44F5-8427-D7C3C90EF7DD}
 		{DDA356FD-E6C7-4677-B839-2B9671FF1043} = {C010521E-BDDD-46F7-8689-DE8E111B57A2}
+		{B4CA879C-52F7-41AC-A886-5AB27D0B6E71} = {B810C47D-30A9-44F5-8427-D7C3C90EF7DD}
+		{D462F29A-25D6-4518-9EEB-47BD0C3A1D52} = {B4CA879C-52F7-41AC-A886-5AB27D0B6E71}
 	EndGlobalSection
 EndGlobal
