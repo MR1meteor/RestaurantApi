@@ -60,7 +60,8 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Menu {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM menus
+        ///   Looks up a localized string similar to DELETE
+        ///FROM menus
         ///WHERE id = @Id.
         /// </summary>
         internal static string Delete {
@@ -70,10 +71,9 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Menu {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id          as &quot;Id&quot;,
-        ///    title       as &quot;Title&quot;,
-        ///    description as &quot;Description&quot;
+        ///   Looks up a localized string similar to SELECT id          as &quot;Id&quot;,
+        ///       title       as &quot;Title&quot;,
+        ///       description as &quot;Description&quot;
         ///FROM menus.
         /// </summary>
         internal static string GetAll {
@@ -83,10 +83,9 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Menu {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id          as &quot;Id&quot;,
-        ///    title       as &quot;Title&quot;,
-        ///    description as &quot;Description&quot;
+        ///   Looks up a localized string similar to SELECT id          as &quot;Id&quot;,
+        ///       title       as &quot;Title&quot;,
+        ///       description as &quot;Description&quot;
         ///FROM menus
         ///WHERE id = @Id.
         /// </summary>
@@ -108,8 +107,7 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Menu {
         
         /// <summary>
         ///   Looks up a localized string similar to UPDATE menus
-        ///SET
-        ///    title       = @Title,
+        ///SET title       = @Title,
         ///    Description = @Description
         ///WHERE id = @Id.
         /// </summary>

@@ -60,7 +60,8 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Dish {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM dishes
+        ///   Looks up a localized string similar to DELETE
+        ///FROM dishes
         ///WHERE id = @Id.
         /// </summary>
         internal static string Delete {
@@ -70,12 +71,11 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Dish {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id              as &quot;Id&quot;,
-        ///    name            as &quot;Name&quot;,
-        ///    description     as &quot;Description&quot;,
-        ///    category        as &quot;Category&quot;,
-        ///    is_available    as &quot;IsAvailable&quot;
+        ///   Looks up a localized string similar to SELECT id           as &quot;Id&quot;,
+        ///       name         as &quot;Name&quot;,
+        ///       description  as &quot;Description&quot;,
+        ///       category     as &quot;Category&quot;,
+        ///       is_available as &quot;IsAvailable&quot;
         ///FROM dishes.
         /// </summary>
         internal static string GetAll {
@@ -85,12 +85,11 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Dish {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id              as &quot;Id&quot;,
-        ///    name            as &quot;Name&quot;,
-        ///    description     as &quot;Description&quot;,
-        ///    category        as &quot;Category&quot;,
-        ///    is_available    as &quot;IsAvailable&quot;
+        ///   Looks up a localized string similar to SELECT id           as &quot;Id&quot;,
+        ///       name         as &quot;Name&quot;,
+        ///       description  as &quot;Description&quot;,
+        ///       category     as &quot;Category&quot;,
+        ///       is_available as &quot;IsAvailable&quot;
         ///FROM dishes
         ///WHERE id = @Id.
         /// </summary>
@@ -112,11 +111,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Dish {
         
         /// <summary>
         ///   Looks up a localized string similar to UPDATE dishes
-        ///SET
-        ///    name            = @Name,
-        ///    description     = @Description,
-        ///    category        = @Category,
-        ///    is_available    = @IsAvailable
+        ///SET name         = @Name,
+        ///    description  = @Description,
+        ///    category     = @Category,
+        ///    is_available = @IsAvailable
         ///WHERE id = @Id.
         /// </summary>
         internal static string Update {

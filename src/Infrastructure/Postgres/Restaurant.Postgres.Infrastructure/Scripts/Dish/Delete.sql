@@ -1,2 +1,3 @@
-DELETE FROM dishes
+DELETE
+FROM dishes
 WHERE id = @Id

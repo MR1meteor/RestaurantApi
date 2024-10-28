@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Restaurant.Api.Helpers;
 using Restaurant.Application.Abstractions;
 using Restaurant.Application.Domain.Domain;
 
@@ -19,34 +20,44 @@ public class DishController : ControllerBase
     public async Task<ActionResult<List<Dish>>> GetAllAsync()
     {
         var result = await _dishService.GetAllAsync();
-        return Ok(result);
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 
-    [HttpGet("{id:int}")]
-    public async Task<ActionResult<Dish>> GetByIdAsync([FromRoute] int id)
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Dish>> GetByIdAsync([FromRoute] string id)
     {
         var result = await _dishService.GetByIdAsync(id);
-        return result == null ? NotFound() : Ok(result);
+        return result.IsSuccess
+            ? Ok(result.Data)
+            : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 
     [HttpPost]
     public async Task<IActionResult> CreateAsync([FromBody] Dish dish)
     {
-        await _dishService.CreateAsync(dish);
-        return Ok();
+        var result = await _dishService.CreateAsync(dish);
+        return result.IsSuccess
+            ? Ok()
+            : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 
     [HttpPut]
     public async Task<IActionResult> UpdateAsync([FromBody] Dish dish)
     {
-        await _dishService.UpdateAsync(dish);
-        return Ok();
+        var result = await _dishService.UpdateAsync(dish);
+        return result.IsSuccess
+            ? Ok()
+            : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 
-    [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteByIdAsync([FromRoute] int id)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteByIdAsync([FromRoute] string id)
     {
-        await _dishService.DeleteByIdAsync(id);
-        return Ok();
+        var result = await _dishService.DeleteByIdAsync(id);
+        return result.IsSuccess
+            ? Ok()
+            : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 }

@@ -1,4 +1,5 @@
 using Restaurant.Application.Abstractions;
+using Restaurant.Application.Abstractions.Postgres;
 using Restaurant.Application.Domain.Domain;
 using Restaurant.Application.Domain.Mappers;
 
@@ -7,7 +8,7 @@ namespace Restaurant.Application;
 public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;
-    
+
     public OrderService(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;

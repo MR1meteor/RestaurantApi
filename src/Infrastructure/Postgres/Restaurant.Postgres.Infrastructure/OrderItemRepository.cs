@@ -1,5 +1,5 @@
-using Restaurant.Application.Abstractions;
-using Restaurant.Application.Domain.PostgresDb;
+using Restaurant.Application.Abstractions.Postgres;
+using Restaurant.Application.Domain.Postgres;
 using Restaurant.Infrastructure.Common.Dapper;
 using Restaurant.Infrastructure.Common.Dapper.Interfaces;
 using Restaurant.Postgres.Infrastructure.Scripts.OrderItem;
@@ -14,7 +14,7 @@ public class OrderItemRepository : IOrderItemRepository
     {
         _dapperContext = dapperContext;
     }
-    
+
     public async Task<List<DbOrderItem>> GetAllAsync()
     {
         var queryObject = new QueryObject(PostgresOrderItem.GetAll, new { });

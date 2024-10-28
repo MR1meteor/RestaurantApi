@@ -1,6 +1,6 @@
 using Restaurant.Application.Domain.Domain;
 using Restaurant.Application.Domain.Enums;
-using Restaurant.Application.Domain.PostgresDb;
+using Restaurant.Application.Domain.Postgres;
 
 namespace Restaurant.Application.Domain.Mappers;
 
@@ -19,7 +19,7 @@ public static class OrderMapper
                 CreatedTime = db.CreatedTime
             };
     }
-    
+
     public static List<Order> MapToDomain(this IEnumerable<DbOrder>? db)
     {
         return db == null

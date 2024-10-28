@@ -1,4 +1,4 @@
-namespace Restaurant.Application.Domain.PostgresDb;
+namespace Restaurant.Application.Domain.Postgres;
 
 public class DbMenu
 {

@@ -60,7 +60,8 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.MenuItem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM menu_items
+        ///   Looks up a localized string similar to DELETE
+        ///FROM menu_items
         ///WHERE id = @Id.
         /// </summary>
         internal static string Delete {
@@ -70,11 +71,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.MenuItem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id      as &quot;Id&quot;,
-        ///    menu_id as &quot;MenuId&quot;,
-        ///    dish_id as &quot;DishId&quot;,
-        ///    price   as &quot;Price&quot;
+        ///   Looks up a localized string similar to SELECT id      as &quot;Id&quot;,
+        ///       menu_id as &quot;MenuId&quot;,
+        ///       dish_id as &quot;DishId&quot;,
+        ///       price   as &quot;Price&quot;
         ///FROM menu_items.
         /// </summary>
         internal static string GetAll {
@@ -84,11 +84,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.MenuItem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id      as &quot;Id&quot;,
-        ///    menu_id as &quot;MenuId&quot;,
-        ///    dish_id as &quot;DishId&quot;,
-        ///    price   as &quot;Price&quot;
+        ///   Looks up a localized string similar to SELECT id      as &quot;Id&quot;,
+        ///       menu_id as &quot;MenuId&quot;,
+        ///       dish_id as &quot;DishId&quot;,
+        ///       price   as &quot;Price&quot;
         ///FROM menu_items
         ///WHERE id = @Id.
         /// </summary>
@@ -110,8 +109,7 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.MenuItem {
         
         /// <summary>
         ///   Looks up a localized string similar to UPDATE menu_items
-        ///SET
-        ///    menu_id = @MenuId,
+        ///SET menu_id = @MenuId,
         ///    dish_id = @DishId,
         ///    price   = @Price
         ///WHERE id = @Id.

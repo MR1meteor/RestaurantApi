@@ -1,7 +1,7 @@
-using Restaurant.Application.Domain.PostgresDb;
+using Restaurant.Application.Domain.Postgres;
 using Restaurant.Common.DependencyInjection.Interfaces;
 
-namespace Restaurant.Application.Abstractions;
+namespace Restaurant.Application.Abstractions.Postgres;
 
 public interface IMenuRepository : ITransient
 {

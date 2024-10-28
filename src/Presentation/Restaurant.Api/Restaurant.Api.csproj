@@ -7,18 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Core\Restaurant\Restaurant.Application.Domain\Restaurant.Application.Domain.csproj" />
-      <ProjectReference Include="..\..\Core\Restaurant\Restaurant.Application\Restaurant.Application.csproj" />
-      <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Common\Restaurant.Postgres.Common.csproj" />
-      <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Infrastructure\Restaurant.Postgres.Infrastructure.csproj" />
-      <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Migration\Restaurant.Postgres.Migration.csproj" />
-      <ProjectReference Include="..\..\Infrastructure\Restaurant.Infrastructure.Common\Restaurant.Infrastructure.Common.csproj" />
+        <ProjectReference Include="..\..\Core\Restaurant\Restaurant.Application.Domain\Restaurant.Application.Domain.csproj"/>
+        <ProjectReference Include="..\..\Core\Restaurant\Restaurant.Application\Restaurant.Application.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\Mongo\Restaurant.Mongo.Infrastructure\Restaurant.Mongo.Infrastructure.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Common\Restaurant.Postgres.Common.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Infrastructure\Restaurant.Postgres.Infrastructure.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Migration\Restaurant.Postgres.Migration.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\Restaurant.Infrastructure.Common\Restaurant.Infrastructure.Common.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.8.1" />
-      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.8.1" />
-      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.8.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.8.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.8.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.8.1"/>
     </ItemGroup>
 
 </Project>

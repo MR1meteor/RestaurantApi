@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Api", "src\Prese
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Application.Abstractions", "src\Core\Restaurant\Restaurant.Application.Abstractions\Restaurant.Application.Abstractions.csproj", "{B2FF54FE-5ED0-4ED2-AA4C-746DE989A823}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mongo", "Mongo", "{C010521E-BDDD-46F7-8689-DE8E111B57A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurant.Mongo.Infrastructure", "src\Infrastructure\Mongo\Restaurant.Mongo.Infrastructure\Restaurant.Mongo.Infrastructure.csproj", "{DDA356FD-E6C7-4677-B839-2B9671FF1043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -115,6 +119,14 @@ Global
 		{B2FF54FE-5ED0-4ED2-AA4C-746DE989A823}.Release|x64.Build.0 = Release|Any CPU
 		{B2FF54FE-5ED0-4ED2-AA4C-746DE989A823}.Release|x86.ActiveCfg = Release|Any CPU
 		{B2FF54FE-5ED0-4ED2-AA4C-746DE989A823}.Release|x86.Build.0 = Release|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Debug|x64.Build.0 = Debug|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Debug|x86.Build.0 = Debug|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x64.ActiveCfg = Release|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x64.Build.0 = Release|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x86.ActiveCfg = Release|Any CPU
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,5 +150,7 @@ Global
 		{3D682120-648F-4356-AE26-B6382E9EE678} = {B810C47D-30A9-44F5-8427-D7C3C90EF7DD}
 		{038003E0-92D8-4443-9E71-76164E584DE2} = {9C237E09-AB37-455B-9181-3EC6559509A2}
 		{B2FF54FE-5ED0-4ED2-AA4C-746DE989A823} = {CA83CC5D-9922-4B09-B630-52266918B04C}
+		{C010521E-BDDD-46F7-8689-DE8E111B57A2} = {B810C47D-30A9-44F5-8427-D7C3C90EF7DD}
+		{DDA356FD-E6C7-4677-B839-2B9671FF1043} = {C010521E-BDDD-46F7-8689-DE8E111B57A2}
 	EndGlobalSection
 EndGlobal

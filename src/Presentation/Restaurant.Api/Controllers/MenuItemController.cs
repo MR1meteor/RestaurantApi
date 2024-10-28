@@ -26,7 +26,7 @@ public class MenuItemController : ControllerBase
     public async Task<ActionResult<MenuItem>> GetByIdAsync([FromRoute] int id)
     {
         var result = await _menuItemService.GetByIdAsync(id);
-        return Ok(result);
+        return result == new MenuItem() ? BadRequest("Menu item not found") : Ok(result);
     }
 
     [HttpPost]

@@ -1,5 +1,7 @@
 using Restaurant.Application.Abstractions;
+using Restaurant.Application.Abstractions.Mongo;
 using Restaurant.Application.Domain.Domain;
+using Restaurant.Application.Domain.Errors;
 using Restaurant.Application.Domain.Mappers;
 
 namespace Restaurant.Application;
@@ -13,30 +15,35 @@ public class DishService : IDishService
         _dishRepository = dishRepository;
     }
 
-    public async Task<List<Dish>> GetAllAsync()
+    public async Task<Result<List<Dish>>> GetAllAsync()
     {
         var dishes = await _dishRepository.GetAllAsync();
-        return dishes.MapToDomain();
+        return Result<List<Dish>>.Success(dishes.MapToDomain());
     }
 
-    public async Task<Dish?> GetByIdAsync(int id)
+    public async Task<Result<Dish>> GetByIdAsync(string id)
     {
         var dish = await _dishRepository.GetByIdAsync(id);
-        return dish.MapToDomain();
+        return dish == null
+            ? Result<Dish>.Failure(Errors.General.ObjectNotFound("Dish"))
+            : Result<Dish>.Success(dish.MapToDomain());
     }
 
-    public async Task CreateAsync(Dish dish)
+    public async Task<Result> CreateAsync(Dish dish)
     {
-        await _dishRepository.CreateAsync(dish.MapToDb());
+        await _dishRepository.CreateAsync(dish.MapToMongoDb());
+        return Result.Success();
     }
 
-    public async Task UpdateAsync(Dish dish)
+    public async Task<Result> UpdateAsync(Dish dish)
     {
-        await _dishRepository.UpdateAsync(dish.MapToDb());
+        await _dishRepository.UpdateAsync(dish.MapToMongoDb());
+        return Result.Success();
     }
 
-    public async Task DeleteByIdAsync(int id)
+    public async Task<Result> DeleteByIdAsync(string id)
     {
         await _dishRepository.DeleteByIdAsync(id);
+        return Result.Success();
     }
 }

@@ -13,10 +13,10 @@ public class DapperContext : IDapperContext
     {
         _dapperSettings = dapperSettings;
     }
-    
+
     public async Task<T?> FirstOrDefault<T>(IQueryObject queryObject)
     {
-        return await Execute(query =>query.QueryFirstOrDefaultAsync<T>(queryObject.Sql, queryObject.Params));
+        return await Execute(query => query.QueryFirstOrDefaultAsync<T>(queryObject.Sql, queryObject.Params));
     }
 
     public async Task<List<T>?> ListOrEmpty<T>(IQueryObject queryObject)

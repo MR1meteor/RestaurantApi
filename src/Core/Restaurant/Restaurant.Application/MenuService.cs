@@ -1,4 +1,5 @@
 using Restaurant.Application.Abstractions;
+using Restaurant.Application.Abstractions.Postgres;
 using Restaurant.Application.Domain.Domain;
 using Restaurant.Application.Domain.Mappers;
 
@@ -12,7 +13,7 @@ public class MenuService : IMenuService
     {
         _menuRepository = menuRepository;
     }
-    
+
     public async Task<List<Menu>> GetAllAsync()
     {
         var menus = await _menuRepository.GetAllAsync();

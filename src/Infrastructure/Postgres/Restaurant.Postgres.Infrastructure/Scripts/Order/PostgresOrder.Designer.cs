@@ -60,7 +60,8 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM orders
+        ///   Looks up a localized string similar to DELETE
+        ///FROM orders
         ///WHERE id = @Id.
         /// </summary>
         internal static string Delete {
@@ -70,12 +71,11 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id              as &quot;Id&quot;,
-        ///    table_number    as &quot;TableNumber&quot;,
-        ///    total_price     as &quot;TotalPrice&quot;,
-        ///    status          as &quot;Status&quot;,
-        ///    created_time    as &quot;CreatedTime&quot;
+        ///   Looks up a localized string similar to SELECT id           as &quot;Id&quot;,
+        ///       table_number as &quot;TableNumber&quot;,
+        ///       total_price  as &quot;TotalPrice&quot;,
+        ///       status       as &quot;Status&quot;,
+        ///       created_time as &quot;CreatedTime&quot;
         ///FROM orders.
         /// </summary>
         internal static string GetAll {
@@ -85,12 +85,11 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id              as &quot;Id&quot;,
-        ///    table_number    as &quot;TableNumber&quot;,
-        ///    total_price     as &quot;TotalPrice&quot;,
-        ///    status          as &quot;Status&quot;,
-        ///    created_time    as &quot;CreatedTime&quot;
+        ///   Looks up a localized string similar to SELECT id           as &quot;Id&quot;,
+        ///       table_number as &quot;TableNumber&quot;,
+        ///       total_price  as &quot;TotalPrice&quot;,
+        ///       status       as &quot;Status&quot;,
+        ///       created_time as &quot;CreatedTime&quot;
         ///FROM orders
         ///WHERE id = @Id.
         /// </summary>
@@ -112,11 +111,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.Order {
         
         /// <summary>
         ///   Looks up a localized string similar to UPDATE orders
-        ///SET
-        ///    table_number    = @TableNumber,
-        ///    total_price     = @TotalPrice,
-        ///    status          = @Status,
-        ///    created_time    = @CreatedTime
+        ///SET table_number = @TableNumber,
+        ///    total_price  = @TotalPrice,
+        ///    status       = @Status,
+        ///    created_time = @CreatedTime
         ///WHERE id = @Id.
         /// </summary>
         internal static string Update {
