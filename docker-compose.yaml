@@ -19,9 +19,9 @@ services:
   redis:
     image: redis
     environment:
-        - REDIS_PASSWORD=root
-        - REDIS_USER=admin
-        - REDIS_USER_PASSWORD=root
+      - REDIS_PASSWORD=root
+      - REDIS_USER=admin
+      - REDIS_USER_PASSWORD=root
     ports:
-        - "6379:6379"
+      - "6379:6379"
     restart: unless-stopped

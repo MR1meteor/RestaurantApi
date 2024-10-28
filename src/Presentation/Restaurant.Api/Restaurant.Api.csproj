@@ -13,13 +13,13 @@
         <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Common\Restaurant.Postgres.Common.csproj"/>
         <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Infrastructure\Restaurant.Postgres.Infrastructure.csproj"/>
         <ProjectReference Include="..\..\Infrastructure\Postgres\Restaurant.Postgres.Migration\Restaurant.Postgres.Migration.csproj"/>
-        <ProjectReference Include="..\..\Infrastructure\Redis\Restaurant.Redis.Infrastructure\Restaurant.Redis.Infrastructure.csproj" />
+        <ProjectReference Include="..\..\Infrastructure\Redis\Restaurant.Redis.Infrastructure\Restaurant.Redis.Infrastructure.csproj"/>
         <ProjectReference Include="..\..\Infrastructure\Restaurant.Infrastructure.Common\Restaurant.Infrastructure.Common.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.0-rc.2.24474.3" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0-rc.2.24473.5" />
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.0-rc.2.24474.3"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0-rc.2.24473.5"/>
         <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.8.1"/>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.8.1"/>
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.8.1"/>

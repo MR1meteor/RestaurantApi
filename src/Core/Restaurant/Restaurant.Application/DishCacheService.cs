@@ -10,22 +10,19 @@ public class DishCacheService : IDishCacheService
 {
     private const string GET_ALL_KEY = "GET_ALL_DISHES";
     private const string GET_SINGLE_KEY = "Dish_";
-    
+
     private readonly IRedisClient _redisClient;
 
     public DishCacheService(IRedisClient redisClient)
     {
         _redisClient = redisClient;
     }
-    
+
     public async Task<List<Dish>> GetAllAsync()
     {
         var cachedDishBytes = await _redisClient.GetByKeyAsync(GET_ALL_KEY);
 
-        if (cachedDishBytes == null)
-        {
-            return new List<Dish>();
-        }
+        if (cachedDishBytes == null) return new List<Dish>();
 
         return ConvertCacheToData<List<Dish>>(cachedDishBytes);
     }
@@ -35,10 +32,7 @@ public class DishCacheService : IDishCacheService
         var key = $"{GET_SINGLE_KEY}{id}";
         var cachedDishBytes = await _redisClient.GetByKeyAsync(key);
 
-        if (cachedDishBytes == null)
-        {
-            return null;
-        }
+        if (cachedDishBytes == null) return null;
 
         return ConvertCacheToData<Dish>(cachedDishBytes);
     }
@@ -58,11 +52,8 @@ public class DishCacheService : IDishCacheService
 
     private static T ConvertCacheToData<T>(byte[]? bytes)
     {
-        if (bytes == null)
-        {
-            return default;
-        }
-        
+        if (bytes == null) return default;
+
         var stringBytes = Encoding.UTF8.GetString(bytes);
         var deserializedData = JsonSerializer.Deserialize<T>(stringBytes) ?? default;
 
@@ -74,5 +65,4 @@ public class DishCacheService : IDishCacheService
         var serializedData = JsonSerializer.Serialize(data);
         return Encoding.UTF8.GetBytes(serializedData);
     }
-    
 }

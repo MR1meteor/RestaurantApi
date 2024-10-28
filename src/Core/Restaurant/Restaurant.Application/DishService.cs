@@ -9,8 +9,8 @@ namespace Restaurant.Application;
 
 public class DishService : IDishService
 {
-    private readonly IDishRepository _dishRepository;
     private readonly IDishCacheService _dishCacheService;
+    private readonly IDishRepository _dishRepository;
     private readonly ILogger<DishService> _logger;
 
     public DishService(IDishRepository dishRepository, IDishCacheService dishCacheService, ILogger<DishService> logger)
@@ -29,7 +29,7 @@ public class DishService : IDishService
             _logger.LogInformation("Get all from cache");
             return Result<List<Dish>>.Success(cachedData);
         }
-        
+
         _logger.LogInformation("Get all from db");
         var dishes = await _dishRepository.GetAllAsync();
         await _dishCacheService.AddAllAsync(dishes.MapToDomain());
@@ -45,13 +45,10 @@ public class DishService : IDishService
             _logger.LogInformation($"Get by id {id} from cache");
             return Result<Dish>.Success(cachedData);
         }
-        
+
         _logger.LogInformation($"Get by id {id} from db");
         var dbDish = await _dishRepository.GetByIdAsync(id);
-        if (dbDish == null)
-        {
-            return Result<Dish>.Failure(Errors.General.ObjectNotFound("Dish"));
-        }
+        if (dbDish == null) return Result<Dish>.Failure(Errors.General.ObjectNotFound("Dish"));
 
         var dish = dbDish.MapToDomain();
         await _dishCacheService.AddAsync(dish);
@@ -67,11 +64,8 @@ public class DishService : IDishService
     public async Task<Result> UpdateAsync(Dish dish)
     {
         var dbDish = await _dishRepository.GetByIdAsync(dish.Id);
-        if (dbDish == null)
-        {
-            return Result.Failure(Errors.General.ObjectNotFound("Dish"));
-        }
-        
+        if (dbDish == null) return Result.Failure(Errors.General.ObjectNotFound("Dish"));
+
         await _dishRepository.UpdateAsync(dish.MapToMongoDb());
         await _dishCacheService.AddAsync(dish);
         return Result.Success();
@@ -80,11 +74,8 @@ public class DishService : IDishService
     public async Task<Result> DeleteByIdAsync(string id)
     {
         var dbDish = await _dishRepository.GetByIdAsync(id);
-        if (dbDish == null)
-        {
-            return Result.Failure(Errors.General.ObjectNotFound("Dish"));
-        }
-        
+        if (dbDish == null) return Result.Failure(Errors.General.ObjectNotFound("Dish"));
+
         await _dishRepository.DeleteByIdAsync(id);
         return Result.Success();
     }
