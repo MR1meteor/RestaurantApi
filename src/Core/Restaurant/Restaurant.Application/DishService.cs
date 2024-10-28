@@ -37,12 +37,24 @@ public class DishService : IDishService
 
     public async Task<Result> UpdateAsync(Dish dish)
     {
+        var dbDish = await _dishRepository.GetByIdAsync(dish.Id);
+        if (dbDish == null)
+        {
+            return Result.Failure(Errors.General.ObjectNotFound("Dish"));
+        }
+        
         await _dishRepository.UpdateAsync(dish.MapToMongoDb());
         return Result.Success();
     }
 
     public async Task<Result> DeleteByIdAsync(string id)
     {
+        var dbDish = await _dishRepository.GetByIdAsync(id);
+        if (dbDish == null)
+        {
+            return Result.Failure(Errors.General.ObjectNotFound("Dish"));
+        }
+        
         await _dishRepository.DeleteByIdAsync(id);
         return Result.Success();
     }
