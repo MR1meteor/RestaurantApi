@@ -32,7 +32,7 @@ public static class DishMapper
             ? new DbDish()
             : new DbDish
             {
-                Id = int.Parse(domain.Id),
+                Id = int.TryParse(domain.Id, out var parsedId) ? parsedId : 0,
                 Name = domain.Name,
                 Description = domain.Description,
                 Category = domain.Category,
@@ -74,7 +74,7 @@ public static class DishMapper
             ? new Mongo.DbDish()
             : new Mongo.DbDish
             {
-                Id = Guid.Parse(domain.Id),
+                Id = Guid.TryParse(domain.Id, out var parsedId) ? parsedId : Guid.Empty,
                 Name = domain.Name,
                 Description = domain.Description,
                 Category = domain.Category,

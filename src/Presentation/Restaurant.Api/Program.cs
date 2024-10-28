@@ -1,3 +1,6 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using Restaurant.Common.DependencyInjection;
 using Restaurant.Common.DependencyInjection.Interfaces;
 using Restaurant.Infrastructure.Common.Dapper;
@@ -9,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IDapperSettings, PostgresDapperSettings>();
 builder.Services.AddSingleton<IDapperContext, DapperContext>();
+BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
 builder.Services.RegisterAllTypes<IDependency>(typeof(Program).Assembly);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
