@@ -25,7 +25,7 @@ public class DishController : ControllerBase
             : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:guid}")]
     public async Task<ActionResult<Dish>> GetByIdAsync([FromRoute] string id)
     {
         var result = await _dishService.GetByIdAsync(id);
@@ -52,7 +52,7 @@ public class DishController : ControllerBase
             : StatusCode((int)HttpErrorConverter.ConvertToHttp(result.Error), result.Error?.Message);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteByIdAsync([FromRoute] string id)
     {
         var result = await _dishService.DeleteByIdAsync(id);
