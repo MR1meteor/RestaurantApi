@@ -7,59 +7,59 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Scripts\Dish\PostgresDish.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>PostgresDish.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Scripts\Order\PostgresOrder.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>PostgresOrder.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Scripts\OrderItem\PostgresOrderItem.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>PostgresOrderItem.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Scripts\Menu\PostgresMenu.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>PostgresMenu.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Scripts\MenuItem\PostgresMenuItem.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>PostgresMenuItem.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
+        <EmbeddedResource Update="Scripts\Dish\PostgresDish.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>PostgresDish.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Scripts\Order\PostgresOrder.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>PostgresOrder.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Scripts\OrderItem\PostgresOrderItem.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>PostgresOrderItem.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Scripts\Menu\PostgresMenu.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>PostgresMenu.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Scripts\MenuItem\PostgresMenuItem.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>PostgresMenuItem.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Scripts\Dish\PostgresDish.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PostgresDish.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Scripts\Order\PostgresOrder.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PostgresOrder.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Scripts\OrderItem\PostgresOrderItem.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PostgresOrderItem.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Scripts\Menu\PostgresMenu.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PostgresMenu.resx</DependentUpon>
-      </Compile>
-      <Compile Update="Scripts\MenuItem\PostgresMenuItem.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>PostgresMenuItem.resx</DependentUpon>
-      </Compile>
+        <Compile Update="Scripts\Dish\PostgresDish.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PostgresDish.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Scripts\Order\PostgresOrder.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PostgresOrder.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Scripts\OrderItem\PostgresOrderItem.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PostgresOrderItem.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Scripts\Menu\PostgresMenu.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PostgresMenu.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Scripts\MenuItem\PostgresMenuItem.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>PostgresMenuItem.resx</DependentUpon>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Core\Restaurant\Restaurant.Application.Abstractions\Restaurant.Application.Abstractions.csproj" />
-      <ProjectReference Include="..\..\Restaurant.Infrastructure.Common\Restaurant.Infrastructure.Common.csproj" />
+        <ProjectReference Include="..\..\..\Core\Restaurant\Restaurant.Application.Abstractions\Restaurant.Application.Abstractions.csproj"/>
+        <ProjectReference Include="..\..\Restaurant.Infrastructure.Common\Restaurant.Infrastructure.Common.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -1,2 +1,3 @@
-DELETE FROM menu_items
+DELETE
+FROM menu_items
 WHERE id = @Id

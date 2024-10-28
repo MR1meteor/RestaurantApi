@@ -1,2 +1,3 @@
-DELETE FROM menus
+DELETE
+FROM menus
 WHERE id = @Id

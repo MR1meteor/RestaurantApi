@@ -1,5 +1,4 @@
 UPDATE menus
-SET
-    title       = @Title,
+SET title       = @Title,
     Description = @Description
 WHERE id = @Id

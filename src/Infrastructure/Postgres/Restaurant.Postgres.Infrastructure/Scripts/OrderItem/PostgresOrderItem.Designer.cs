@@ -60,7 +60,8 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.OrderItem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM order_items
+        ///   Looks up a localized string similar to DELETE
+        ///FROM order_items
         ///WHERE id = @Id.
         /// </summary>
         internal static string Delete {
@@ -70,12 +71,11 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.OrderItem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id          as &quot;Id&quot;,
-        ///    order_id    as &quot;OrderId&quot;,
-        ///    dish_id     as &quot;DishId&quot;,
-        ///    status      as &quot;Status&quot;,
-        ///    price       as &quot;Price&quot;
+        ///   Looks up a localized string similar to SELECT id       as &quot;Id&quot;,
+        ///       order_id as &quot;OrderId&quot;,
+        ///       dish_id  as &quot;DishId&quot;,
+        ///       status   as &quot;Status&quot;,
+        ///       price    as &quot;Price&quot;
         ///FROM order_items.
         /// </summary>
         internal static string GetAll {
@@ -85,12 +85,11 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.OrderItem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT
-        ///    id          as &quot;Id&quot;,
-        ///    order_id    as &quot;OrderId&quot;,
-        ///    dish_id     as &quot;DishId&quot;,
-        ///    status      as &quot;Status&quot;,
-        ///    price       as &quot;Price&quot;
+        ///   Looks up a localized string similar to SELECT id       as &quot;Id&quot;,
+        ///       order_id as &quot;OrderId&quot;,
+        ///       dish_id  as &quot;DishId&quot;,
+        ///       status   as &quot;Status&quot;,
+        ///       price    as &quot;Price&quot;
         ///FROM order_items
         ///WHERE id = @Id.
         /// </summary>
@@ -112,11 +111,10 @@ namespace Restaurant.Postgres.Infrastructure.Scripts.OrderItem {
         
         /// <summary>
         ///   Looks up a localized string similar to UPDATE order_items
-        ///SET
-        ///    order_id    = @OrderId,
-        ///    dish_id     = @DishId,
-        ///    status      = @Status,
-        ///    price       = @Price
+        ///SET order_id = @OrderId,
+        ///    dish_id  = @DishId,
+        ///    status   = @Status,
+        ///    price    = @Price
         ///WHERE id = @Id.
         /// </summary>
         internal static string Update {

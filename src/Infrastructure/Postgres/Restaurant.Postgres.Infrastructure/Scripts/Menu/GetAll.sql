@@ -1,5 +1,4 @@
-SELECT
-    id          as "Id",
-    title       as "Title",
-    description as "Description"
+SELECT id          as "Id",
+       title       as "Title",
+       description as "Description"
 FROM menus

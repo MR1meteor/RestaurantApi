@@ -26,7 +26,7 @@ public class MenuController : ControllerBase
     public async Task<ActionResult<Menu>> GetByIdAsync([FromRoute] int id)
     {
         var result = await _menuService.GetByIdAsync(id);
-        return Ok(result);
+        return result == new Menu() ? BadRequest("Menu not found") : Ok(result);
     }
 
     [HttpPost]
@@ -44,7 +44,6 @@ public class MenuController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-
     public async Task<IActionResult> DeleteAsync([FromRoute] int id)
     {
         await _menuService.DeleteByIdAsync(id);

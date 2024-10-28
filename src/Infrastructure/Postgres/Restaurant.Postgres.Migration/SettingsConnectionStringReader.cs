@@ -11,7 +11,7 @@ public class SettingsConnectionStringReader : IConnectionStringReader
     {
         _configuration = configuration;
     }
-    
+
     public string GetConnectionString(string connectionStringOrName)
     {
         return _configuration["Connections:Postgres"];

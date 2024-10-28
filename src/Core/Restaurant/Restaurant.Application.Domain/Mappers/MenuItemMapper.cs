@@ -1,5 +1,5 @@
 using Restaurant.Application.Domain.Domain;
-using Restaurant.Application.Domain.PostgresDb;
+using Restaurant.Application.Domain.Postgres;
 
 namespace Restaurant.Application.Domain.Mappers;
 

@@ -14,7 +14,7 @@ public class OrderItemController : ControllerBase
     {
         _orderItemService = orderItemService;
     }
-    
+
     [HttpGet("all")]
     public async Task<ActionResult<OrderItem>> GetAllAsync()
     {
@@ -26,7 +26,7 @@ public class OrderItemController : ControllerBase
     public async Task<ActionResult<OrderItem>> GetByIdAsync([FromRoute] int id)
     {
         var result = await _orderItemService.GetByIdAsync(id);
-        return Ok(result);
+        return result == new OrderItem() ? BadRequest("Order item not found") : Ok(result);
     }
 
     [HttpPost]

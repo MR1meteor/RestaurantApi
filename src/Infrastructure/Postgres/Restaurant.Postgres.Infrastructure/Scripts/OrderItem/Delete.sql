@@ -1,2 +1,3 @@
-DELETE FROM order_items
+DELETE
+FROM order_items
 WHERE id = @Id

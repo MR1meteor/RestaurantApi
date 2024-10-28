@@ -12,13 +12,13 @@ public static class PostgresMigrationRunner
             .AddFluentMigratorCore()
             .ConfigureRunner(rb => rb.AddPostgres().ScanIn(typeof(SettingsConnectionStringReader).Assembly)
                 .For.Migrations().For.EmbeddedResources()).BuildServiceProvider();
-        
+
         using (var scope = serviceProvider.CreateScope())
         {
             var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
             runner.MigrateUp();
         }
-        
+
         return services;
     }
 }

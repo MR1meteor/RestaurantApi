@@ -1,4 +1,5 @@
 using Restaurant.Application.Abstractions;
+using Restaurant.Application.Abstractions.Postgres;
 using Restaurant.Application.Domain.Domain;
 using Restaurant.Application.Domain.Mappers;
 
@@ -7,7 +8,7 @@ namespace Restaurant.Application;
 public class OrderItemService : IOrderItemService
 {
     private readonly IOrderItemRepository _orderItemRepository;
-    
+
     public async Task<List<OrderItem>> GetAllAsync()
     {
         var orderItems = await _orderItemRepository.GetAllAsync();
